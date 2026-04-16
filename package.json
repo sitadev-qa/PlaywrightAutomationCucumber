@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js --config cucumber.config.js",
-    "test:headless": "cross-env HEADLESS=true cucumber-js --config cucumber.config.js"
+    "test:headless": "cross-env HEADLESS=true cucumber-js --config cucumber.config.js",
+    "test:smoketag": "cucumber-js --config cucumber.config.js --tags @smoke"
   },
   "keywords": [
     "playwright",

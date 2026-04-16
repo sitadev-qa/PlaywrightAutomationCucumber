@@ -120,3 +120,52 @@ Then('something should happen', async function () {
     await expect(this.page.locator('selector')).toBeVisible();
 });
 ```
+
+Steps -
+
+Step 1 - 
+
+Integrate Cucumber Framework in Playwright
+Npm init playwright
+Npm install @cucumber/cucumber
+Install VS Code icon extension
+Install Cucumber extension
+
+
+Step 2 - 
+
+Create cucumber.config.js with below data
+
+export default {
+  paths: [
+    "tests/features/*.feature"
+  ],
+  require: [
+    "tests/stepDefinitions/*.js",
+    "tests/support/*.js"
+  ],
+  publishQuiet: true,
+  format: [
+    "progress",
+    "html:reports/report.html"
+  ]
+}
+
+
+Step 3 - 
+
+Navigate to package.json and enter below data
+{
+  "type": "module",
+  "scripts": {
+    "test": "cucumber-js --config cucumber.config.js",
+    "test:login:smoke": "cucumber-js --config cucumber.config.js --tags @TC001"
+  }
+}
+
+
+Step 4 - 
+
+Hit Ctrl + and edit settings.json
+cucumber.feature
+cucumber.glue
